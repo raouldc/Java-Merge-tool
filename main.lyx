@@ -147,20 +147,6 @@ We aim to develop a language-aware code versioning system based on PDStore.
 \end_layout
 
 \begin_layout Section
-Problem Statement
-\end_layout
-
-\begin_layout Standard
-Today's code version systems are based on textual comparisons.
- Being textual based means that they do not understand the structure of
- the code, and as a result the tools are unable to assist the developer
- with code merging.
- We aim to develop a language-aware code versioning system based on PDStore.
- In particular, we will utilize structured data to visualize changes to
- the structure of a source code file to assist with merging.
-\end_layout
-
-\begin_layout Section
 Literature review
 \end_layout
 
@@ -309,10 +295,19 @@ The following shows an example of where our tool successfully merges two
 \end_layout
 
 \begin_layout Standard
+Figure 1 shows one possible scenario we intend to solve with our tool.
+ We aim to recognise if a method is carrying out the same procedure as an
+ existing method, at commit.
+ As you can see in the above figure, the tool merges the two methods into
+ one, by keeping the recent name of the method and same code within the
+ method.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -336,15 +331,6 @@ Identification of changes and merged result
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-Figure 1 shows one possible scenario we intend to solve with our tool.
- We aim to recognise if a method is carrying out the same procedure as an
- existing method, at commit.
- As you can see in the above figure, the tool merges the two methods into
- one, by keeping the recent name of the method and same code within the
- method.
 \end_layout
 
 \begin_layout Section
@@ -493,7 +479,6 @@ Due Date:
 
 \end_deeper
 \begin_layout Standard
- 
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 bibfiles "myBib"
