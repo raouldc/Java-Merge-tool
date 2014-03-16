@@ -469,7 +469,8 @@ Milestone Three:
 
 \end_inset
 
- 
+ Integrate the added functionality to existing PDStore based versioning
+ tool
 \begin_inset space ~
 \end_inset
 
@@ -478,8 +479,7 @@ Milestone Three:
 
 \begin_deeper
 \begin_layout Standard
-Integrate the added functionality to existing PDStore based versioning tool.
- Integrating the added functionality will allow us to conduct our evaluation
+Integrating the added functionality will allow us to conduct our evaluation
  on users.
  This will be key in determining the usefulness and effectiveness of the
  changes.
