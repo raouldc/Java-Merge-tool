@@ -26,7 +26,7 @@
 \section{Abstract}
 
 Software merging is a necessity for large-scale software development
-and while there are many code version systems to help with this, none
+and while there are many code version systems to help with this, many
 of them take the structure of the code into account. Understanding
 the semantic and the syntactic structure of the code helps automate
 merging further, which in turn requires less effort from the developer
@@ -80,7 +80,7 @@ problems, a few difference exist in the problem. Due to the nature
 of XML, the local structure is also to be considered. However with
 Java code the structure can vary and still present the same semantic
 definition. Thus some of the rules made in \cite{XMLMerge} become
-invalid for semi structured data such as code.
+invalid for flexible structured data such as code.
 
 \cite{mergegraph} describes the problems associated with common textual
 based merging. It proposes a solution that can be applied to software
@@ -96,7 +96,7 @@ A successful execution of the research endeavour should meet the following
 requirements: 
 \begin{enumerate}
 \item To be able to successfully identify simple changes in method body
-but not code structure 
+but not necessarily code structure 
 \item To be able to successfully identify and common sections of code in
 two structures with slight variations 
 \item Identify changes in structure, such as method location being shifted 
@@ -119,7 +119,7 @@ defining a method to define “sameness” of a section of the code, we
 will be using a similar approach to \cite{XMLMerge} to generate rules
 that help define merging.
 
-The following shows an example of where our tool successfully merges
+The following describes an example of where our tool successfully merges
 two documents, identifying the changes with respect to semantic meaning
 and structure.
 
@@ -137,8 +137,8 @@ of the method and same code within the method.
 
 \section{Evaluation}
 
-Paper prototypes will be used to evaluate the feasibility of the design
-of the User Interface of our tool. This study will reveal both fundamental
+Paper prototypes will be used to evaluate the feasibility of the 
+User Interface design of our tool. This study will reveal both fundamental
 and minor flaws in the UI that would need to be fixed before the final
 milestone. Specific scenarios will be constructed outlining various
 use cases that will then be run through by the participants on multiple
@@ -163,7 +163,7 @@ changes
 
 
 This involves defining rules and defining a notion of “sameness” for
-two artefacts of code. The PDStore database will be used to compare
+two code artefacts. The PDStore database will be used to compare
 the two different versions of the code. Completion criteria involves
 being able to generate output that clearly identify the changes. \\
 \textbf{Due Date:} 15th April 2014
