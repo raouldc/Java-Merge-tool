@@ -211,8 +211,8 @@ key "XMLMerge"
  a technique for performing a 3 way structured XML merge is described.
  The technique involves defining merge rules derived from common use cases
  of XML editing.
- While there are similar problems, a few difference exist in the problem.
- Due to the nature of XML, the local structure is also to be considered.
+ While there are similar problems, a few differences exist.
+ By the nature of XML, the local structure is important.
  However with Java code the structure can vary and still present the same
  semantic definition.
  Thus some of the rules made in 
