@@ -1,5 +1,3 @@
-%% LyX 2.0.7 created this file.  For more info, see http://www.lyx.org/.
-%% Do not edit unless you really know what you are doing.
 \documentclass[11pt,twocolumn]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
@@ -14,8 +12,6 @@
 \author{Kartik Andalam, Raoul D'Cunha, Shreya Shah }
 \date{March 2014}
 
-
-
 \makeatother
 
 \begin{document}
@@ -29,16 +25,17 @@
 
 Software merging is a necessity for large-scale software development
 and while there are many code version systems to help with this, none
-of them take in account the structure of the code. Understanding semantic
-and syntactic structure of the code helps automate merging further,
-which in turn requires less effort from the developer at commit.
+of them take the structure of the code into account. Understanding
+the semantic and the syntactic structure of the code helps automate
+merging further, which in turn requires less effort from the developer
+at commit.
 
-We propose a tool that would attempt to automate merging and assist
-the user in identifying the changes by analysing the semantics of
-the code. We intend to use PDStore to store the code in a structured
-manner and that can be used in a versioning system. The proposal also
-highlights the requirements, milestones and possible evaluation method
-of for the research project.
+We propose a tool that would attempt to automate merging and also
+assist the user in identifying the changes by analysing the semantics
+of the code. We intend to use PDStore to store the code in a structured
+manner that can be used in a versioning system. The proposal also
+highlights the requirements, milestones and possible evaluation methods
+for the research project.
 
 
 \section{Motivation}
@@ -54,27 +51,15 @@ PDStore. In particular, we will utilize structured data to visualize
 changes to the structure of a source code file to assist with merging.
 
 
-\section{Problem Statement}
-
-Today's code version systems are based on textual comparisons. Being
-textual based means that they do not understand the structure of the
-code, and as a result the tools are unable to assist the developer
-with code merging. We aim to develop a language-aware code versioning
-system based on PDStore. In particular, we will utilize structured
-data to visualize changes to the structure of a source code file to
-assist with merging.
-
-
 \section{Literature review}
 
-In \cite{XMLMerge} describes technique for performing a 3 way structured
-XML merge. The technique involves defining merge rules derived from
-common use cases of XML editing. While there are similar problems,
-a few difference exist in the problem. Due to the nature of XML, the
-local structure is also to be considered. However with Java code the
-structure can vary and still present the same semantic definition.
-Thus some of the rules made in \cite{XMLMerge} become invalid for
-semistructured data such as code.
+\cite{CodeClones} proposes a novel method for merging code clones
+and presents a successful case study conducted by using the Aries
+tool which uses to identify code clones and merge them. The method
+described in \cite{CodeClones} consists of a two phase process, where
+code clones that can be refactored are quickly detected, and the metrics
+are measured which indicate how the detected code clones should be
+merged.
 
 \cite{SemanticDiff} describes a tool called “Semantic diff” and techniques
 used in that tool to show the effect of modifications. The tool aims
@@ -86,20 +71,21 @@ it is not as helpful when considering an entire program as the tool
 does not maintain any relationship between method invocation and method
 definition.
 
+In \cite{XMLMerge} a technique for performing a 3 way structured
+XML merge is described. The technique involves defining merge rules
+derived from common use cases of XML editing. While there are similar
+problems, a few difference exist in the problem. Due to the nature
+of XML, the local structure is also to be considered. However with
+Java code the structure can vary and still present the same semantic
+definition. Thus some of the rules made in \cite{XMLMerge} become
+invalid for semistructured data such as code.
+
 \cite{mergegraph} describes the problems associated with common textual
 based merging. It proposes a solution that can be applied to software
 artifacts of different types. The solution involves representing information
 with extra information such as namespaces appended with UIDs. Once
 the data is represented in this special structure, the job of analysing
 two structures should be made easier.
-
-\cite{CodeClones} proposes a novel method for merging code clones
-and presents a successful case study conducted by using the Aries
-tool which uses to identify code clones and merge them. The method
-described in \cite{CodeClones} consists of a two phase process, where
-code clones that can be refactored are quickly detected, and the metrics
-are measured which indicate how the detected code clones should be
-merged.
 
 
 \section{Requirements}
@@ -135,16 +121,16 @@ The following shows an example of where our tool successfully merges
 two documents, identifying the changes with respect to semantic meaning
 and structure.
 
-\begin{figure}
-\includegraphics[scale=0.8]{IdentificationOfChanges}\caption{Identification of changes and merged result}
-\end{figure}
-
-
 Figure 1 shows one possible scenario we intend to solve with our tool.
 We aim to recognise if a method is carrying out the same procedure
 as an existing method, at commit. As you can see in the above figure,
 the tool merges the two methods into one, by keeping the recent name
 of the method and same code within the method.
+
+\begin{figure}
+\includegraphics[scale=0.47]{IdentificationOfChanges}\caption{Identification of changes and merged result}
+\end{figure}
+
 
 
 \section{Evaluation}
@@ -160,8 +146,9 @@ Feedback will then be collected from the participants at the end through
 the use of a questionnaire which will then be used to measure the
 usefulness of each design.
 
-Any identified flaws will then be corrected and the test will then
-be undertaken again so as to verify that the flaws are indeed fixed.
+Any flaws which are identified will then be corrected and the test
+will then be undertaken again so as to verify that the flaws are indeed
+fixed.
 
 
 \section{Project Plan}
@@ -197,7 +184,7 @@ and effectiveness of the changes.\\
 \textbf{Due Date:} 12th May 2014 
 
 \end{description}
- \bibliographystyle{plain}
+\bibliographystyle{plain}
 \bibliography{myBib}
 
 \end{document}

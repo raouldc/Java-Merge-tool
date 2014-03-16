@@ -112,19 +112,19 @@ Abstract
 \begin_layout Standard
 Software merging is a necessity for large-scale software development and
  while there are many code version systems to help with this, none of them
- take in account the structure of the code.
- Understanding semantic and syntactic structure of the code helps automate
- merging further, which in turn requires less effort from the developer
+ take the structure of the code into account.
+ Understanding the semantic and the syntactic structure of the code helps
+ automate merging further, which in turn requires less effort from the developer
  at commit.
 \end_layout
 
 \begin_layout Standard
-We propose a tool that would attempt to automate merging and assist the
- user in identifying the changes by analysing the semantics of the code.
- We intend to use PDStore to store the code in a structured manner and that
+We propose a tool that would attempt to automate merging and also assist
+ the user in identifying the changes by analysing the semantics of the code.
+ We intend to use PDStore to store the code in a structured manner that
  can be used in a versioning system.
  The proposal also highlights the requirements, milestones and possible
- evaluation method of for the research project.
+ evaluation methods for the research project.
 \end_layout
 
 \begin_layout Section
@@ -151,28 +151,25 @@ Literature review
 \end_layout
 
 \begin_layout Standard
-In 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "XMLMerge"
+key "CodeClones"
 
 \end_inset
 
- describes technique for performing a 3 way structured XML merge.
- The technique involves defining merge rules derived from common use cases
- of XML editing.
- While there are similar problems, a few difference exist in the problem.
- Due to the nature of XML, the local structure is also to be considered.
- However with Java code the structure can vary and still present the same
- semantic definition.
- Thus some of the rules made in 
+ proposes a novel method for merging code clones and presents a successful
+ case study conducted by using the Aries tool which uses to identify code
+ clones and merge them.
+ The method described in 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "XMLMerge"
+key "CodeClones"
 
 \end_inset
 
- become invalid for semistructured data such as code.
+ consists of a two phase process, where code clones that can be refactored
+ are quickly detected, and the metrics are measured which indicate how the
+ detected code clones should be merged.
 \end_layout
 
 \begin_layout Standard
@@ -193,6 +190,31 @@ key "SemanticDiff"
 \end_layout
 
 \begin_layout Standard
+In 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "XMLMerge"
+
+\end_inset
+
+ a technique for performing a 3 way structured XML merge is described.
+ The technique involves defining merge rules derived from common use cases
+ of XML editing.
+ While there are similar problems, a few difference exist in the problem.
+ Due to the nature of XML, the local structure is also to be considered.
+ However with Java code the structure can vary and still present the same
+ semantic definition.
+ Thus some of the rules made in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "XMLMerge"
+
+\end_inset
+
+ become invalid for semistructured data such as code.
+\end_layout
+
+\begin_layout Standard
 \begin_inset CommandInset citation
 LatexCommand cite
 key "mergegraph"
@@ -206,28 +228,6 @@ key "mergegraph"
  as namespaces appended with UIDs.
  Once the data is represented in this special structure, the job of analysing
  two structures should be made easier.
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset citation
-LatexCommand cite
-key "CodeClones"
-
-\end_inset
-
- proposes a novel method for merging code clones and presents a successful
- case study conducted by using the Aries tool which uses to identify code
- clones and merge them.
- The method described in 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "CodeClones"
-
-\end_inset
-
- consists of a two phase process, where code clones that can be refactored
- are quickly detected, and the metrics are measured which indicate how the
- detected code clones should be merged.
 \end_layout
 
 \begin_layout Section
@@ -307,12 +307,12 @@ Figure 1 shows one possible scenario we intend to solve with our tool.
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename IdentificationOfChanges.jpg
-	scale 80
+	filename IdentificationOfChanges.png
+	scale 47
 
 \end_inset
 
@@ -352,8 +352,8 @@ Paper prototypes will be used to evaluate the feasibility of the design
 \end_layout
 
 \begin_layout Standard
-Any identified flaws will then be corrected and the test will then be undertaken
- again so as to verify that the flaws are indeed fixed.
+Any flaws which are identified will then be corrected and the test will
+ then be undertaken again so as to verify that the flaws are indeed fixed.
 \end_layout
 
 \begin_layout Section
