@@ -1,4 +1,4 @@
-#LyX file created by tex2lyx 2.0.7
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
 \lyxformat 413
 \begin_document
 \begin_header
@@ -11,12 +11,9 @@
 \title{Smarter Merge Tool for Structured Java Code }
 \author{Kartik Andalam, Raoul D'Cunha, Shreya Shah }
 \date{March 2014}
-
-
-
-
 \end_preamble
 \use_default_options false
+\maintain_unincluded_children false
 \language english
 \language_package none
 \inputencoding utf8
@@ -30,12 +27,15 @@
 \font_osf false
 \font_sf_scale 100
 \font_tt_scale 100
+
 \graphics default
 \default_output_format default
 \output_sync 0
+\bibtex_command default
+\index_command default
 \paperfontsize 11
 \spacing single
-\use_hyperref 0
+\use_hyperref false
 \papersize default
 \use_geometry false
 \use_amsmath 1
@@ -48,6 +48,10 @@
 \paperorientation portrait
 \suppress_date false
 \use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation indent
@@ -66,12 +70,10 @@
 \begin_body
 
 \begin_layout Standard
-
-
 \begin_inset ERT
 status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -84,20 +86,17 @@ maketitle
 \end_layout
 
 \begin_layout Standard
-
-
 \begin_inset ERT
 status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 %
 \backslash
 twocolumn
 \end_layout
 
-\begin_layout Standard
-
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -107,88 +106,118 @@ twocolumn
 \end_layout
 
 \begin_layout Section
-
 Abstract
 \end_layout
 
 \begin_layout Standard
-
-Software merging is a necessity for large-scale software development and while there are many code version systems to help with this, many of them take the structure of the code into account. Understanding the semantic and the syntactic structure of the code helps automate merging further, which in turn requires less effort from the developer at commit.
+Software merging is a necessity for large-scale software development and
+ while there are many code version systems to help with this, many of them
+ don't take the structure of the code into account.
+ Understanding the semantic and the syntactic structure of the code helps
+ automate merging further, which in turn requires less effort from the developer
+ at commit.
 \end_layout
 
 \begin_layout Standard
+We propose a tool that would attempt to automate merging and also assist
+ the user in identifying the changes by analysing the semantics of the code.
+ We intend to use PDStore
+\begin_inset Foot
+status open
 
-We propose a tool that would attempt to automate merging and also assist the user in identifying the changes by analysing the semantics of the code. We intend to use PDStore to store the code in a structured manner that can be used in a versioning system. The proposal also highlights the requirements, milestones and possible evaluation methods for the research project.
+\begin_layout Plain Layout
+PDStore is a Triplestore database developed at the University of Auckland
+\end_layout
+
+\end_inset
+
+ to store the code in a structured manner that can be used in a versioning
+ system.
+ The proposal also highlights the requirements, milestones and possible
+ evaluation methods for the research project.
 \end_layout
 
 \begin_layout Section
-
 Motivation
 \end_layout
 
 \begin_layout Standard
-
-Today's code version systems are based on textual comparisons. Being textual based means that they do not understand the structure of the code, and as a result the tools are unable to assist the developer with code merging. This gave motivation to utilise the extra information that can aid in the merging.
+Today's code version systems are based on textual comparisons.
+ Being textual based means that they do not understand the structure of
+ the code, and as a result the tools are unable to assist the developer
+ with code merging.
+ This gave motivation to utilise the extra information that can aid in the
+ merging.
 \end_layout
 
 \begin_layout Standard
-
-We aim to develop a language-aware code versioning system based on PDStore. In particular, we will utilize structured data to visualize changes to the structure of a source code file to assist with merging.
+We aim to develop a language-aware code versioning system based on PDStore.
+ In particular, we will utilize structured data to visualize changes to
+ the structure of a source code file to assist with merging.
 \end_layout
 
 \begin_layout Section
-
 Literature review
 \end_layout
 
 \begin_layout Standard
-
-
 \begin_inset CommandInset citation
 LatexCommand cite
-after ""
 key "CodeClones"
 
 \end_inset
 
- proposes a novel method for merging code clones and presents a successful case study conducted by using the Aries tool which uses to identify code clones and merge them. The method described in 
+ proposes a novel method for merging code clones and presents a successful
+ case study conducted by using the Aries tool which uses to identify code
+ clones and merge them.
+ The method described in 
 \begin_inset CommandInset citation
 LatexCommand cite
-after ""
 key "CodeClones"
 
 \end_inset
 
- consists of a two phase process, where code clones that can be refactored are quickly detected, and the metrics are measured which indicate how the detected code clones should be merged.
+ consists of a two phase process, where code clones that can be refactored
+ are quickly detected, and the metrics are measured which indicate how the
+ detected code clones should be merged.
 \end_layout
 
 \begin_layout Standard
-
-
 \begin_inset CommandInset citation
 LatexCommand cite
-after ""
 key "SemanticDiff"
 
 \end_inset
 
- describes a tool called “Semantic diff” and techniques used in that tool to show the effect of modifications. The tool aims at providing the user with a summarised report of semantic changes between two versions of a procedure, and focuses on minimising any spurious differences such as, renaming local variables. While the tool provides knowledge of variable dependences within a procedure, it is not very helpful when considering an entire program because the tool does not maintain any relationship between method invocation and method definition.
+ describes a tool called “Semantic diff” and techniques used in that tool
+ to show the effect of modifications.
+ The tool aims at providing the user with a summarised report of semantic
+ changes between two versions of a procedure, and focuses on minimising
+ any spurious differences such as, renaming local variables.
+ While the tool provides knowledge of variable dependences within a procedure,
+ it is not very helpful when considering an entire program because the tool
+ does not maintain any relationship between method invocation and method
+ definition.
 \end_layout
 
 \begin_layout Standard
-
 In 
 \begin_inset CommandInset citation
 LatexCommand cite
-after ""
 key "XMLMerge"
 
 \end_inset
 
- a technique for performing a 3 way structured XML merge is described. The technique involves defining merge rules derived from common use cases of XML editing. While there are similar problems, a few difference exist in the problem. Due to the nature of XML, the local structure is also to be considered. However with Java code the structure can vary and still present the same semantic definition. Thus some of the rules made in 
+ a technique for performing a 3 way structured XML merge is described.
+ The technique involves defining merge rules derived from common use cases
+ of XML editing.
+ While there are similar problems, a few difference exist in the problem.
+ Due to the nature of XML, the local structure is also to be considered.
+ However with Java code the structure can vary and still present the same
+ semantic definition.
+ Thus some of the rules made in 
 \begin_inset CommandInset citation
 LatexCommand cite
-after ""
 key "XMLMerge"
 
 \end_inset
@@ -197,69 +226,72 @@ key "XMLMerge"
 \end_layout
 
 \begin_layout Standard
-
-
 \begin_inset CommandInset citation
 LatexCommand cite
-after ""
 key "mergegraph"
 
 \end_inset
 
- describes the problems associated with common textual based merging. It proposes a solution that can be applied to software artefacts of different types. The solution involves representing information with extra information such as namespaces appended with UIDs. Once the data is represented in this special structure, the job of analysing two structures should be made easier.
+ describes the problems associated with common textual based merging.
+ It proposes a solution that can be applied to software artefacts of different
+ types.
+ The solution involves representing information with extra information such
+ as namespaces appended with UIDs.
+ Once the data is represented in this special structure, the job of analysing
+ two structures should be made easier.
 \end_layout
 
 \begin_layout Section
-
 Requirements
 \end_layout
 
 \begin_layout Standard
-
-A successful execution of the research endeavour should meet the following requirements: 
+A successful execution of the research endeavour should meet the following
+ requirements: 
 \end_layout
 
 \begin_layout Enumerate
-
-To be able to successfully identify simple changes in method body but not necessarily code structure 
+To be able to successfully identify simple changes in method body but not
+ necessarily code structure 
 \end_layout
 
 \begin_layout Enumerate
-
-To be able to successfully identify and common sections of code in two structures with slight variations 
+To be able to successfully identify and common sections of code in two structure
+s with slight variations 
 \end_layout
 
 \begin_layout Enumerate
-
 Identify changes in structure, such as method location being shifted 
 \end_layout
 
 \begin_layout Enumerate
-
-Successfully merge two differing versions of code following from the examples in 1 and 2 
+Successfully merge two differing versions of code following from the examples
+ in 1 and 2 
 \end_layout
 
 \begin_layout Standard
-
-The following optional requirements would also be attempted to met during the execution of this research endeavour 
+The following optional requirements would also be attempted to met during
+ the execution of this research endeavour 
 \end_layout
 
 \begin_layout Enumerate
-
-To integrate this additional functionality into the existing PDStore versioning application. 
+To integrate this additional functionality into the existing PDStore versioning
+ application.
+ 
 \end_layout
 
 \begin_layout Section
-
 Design and Implementation
 \end_layout
 
 \begin_layout Standard
-
-The underlying technology used in the proposed method involves using PDStore to be able to form a structured view of the code. The logic for doing the detection and merging will be written in Scala. After defining a method to define “sameness” of a section of the code, we will be using a similar approach to 
+The underlying technology used in the proposed method involves using PDStore
+ to be able to form a structured view of the code.
+ The logic for doing the detection and merging will be written in Scala.
+ After defining a method to define “sameness” of a section of the code,
+ we will be using a similar approach to 
 \begin_inset CommandInset citation
 LatexCommand cite
-after ""
 key "XMLMerge"
 
 \end_inset
@@ -268,38 +300,37 @@ key "XMLMerge"
 \end_layout
 
 \begin_layout Standard
-
-The following describes an example of where our tool successfully merges two documents, identifying the changes with respect to semantic meaning and structure.
+The following describes an example of where our tool successfully merges
+ two documents, identifying the changes with respect to semantic meaning
+ and structure.
 \end_layout
 
 \begin_layout Standard
-
-Figure 1 shows one possible scenario we intend to solve with our tool. We aim to recognise if a method is carrying out the same procedure as an existing method, at commit. As you can see in the above figure, the tool merges the two methods into one, by keeping the recent name of the method and same code within the method.
+Figure 1 shows one possible scenario we intend to solve with our tool.
+ We aim to recognise if a method is carrying out the same procedure as an
+ existing method, at commit.
+ As you can see in the above figure, the tool merges the two methods into
+ one, by keeping the recent name of the method and same code within the
+ method.
 \end_layout
 
 \begin_layout Standard
-
-
 \begin_inset Float figure
 wide false
 sideways false
 status open
 
-
-\begin_layout Standard
-
-
-\begin_inset Graphics 
+\begin_layout Plain Layout
+\begin_inset Graphics
 	filename IdentificationOfChanges.png
-	scale 47
+	scale 44
 
 \end_inset
 
 
 \begin_inset Caption
 
-\begin_layout Standard
-
+\begin_layout Plain Layout
 Identification of changes and merged result
 \end_layout
 
@@ -314,40 +345,45 @@ Identification of changes and merged result
 \end_layout
 
 \begin_layout Section
-
 Evaluation
 \end_layout
 
 \begin_layout Standard
-
-Paper prototypes will be used to evaluate the feasibility of the User Interface design of our tool. This study will reveal both fundamental and minor flaws in the UI that would need to be fixed before the final milestone. Specific scenarios will be constructed outlining various use cases that will then be run through by the participants on multiple different UI designs. The participants will be asked to think out loud, so that their thought process can be observed and evaluated. Feedback will then be collected from the participants at the end through the use of a questionnaire which will then be used to measure the usefulness of each design.
+Paper prototypes will be used to evaluate the feasibility of the User Interface
+ design of our tool.
+ This study will reveal both fundamental and minor flaws in the UI that
+ would need to be fixed before the final milestone.
+ Specific scenarios will be constructed outlining various use cases that
+ will then be run through by the participants on multiple different UI designs.
+ The participants will be asked to think out loud, so that their thought
+ process can be observed and evaluated.
+ Feedback will then be collected from the participants at the end through
+ the use of a questionnaire which will then be used to measure the usefulness
+ of each design.
 \end_layout
 
 \begin_layout Standard
-
-Any flaws which are identified will then be corrected and the test will then be undertaken again so as to verify that the flaws are indeed fixed.
+Any flaws which are identified will then be corrected and the test will
+ then be undertaken again so as to verify that the flaws are indeed fixed.
 \end_layout
 
 \begin_layout Section
-
 Project Plan
 \end_layout
 
 \begin_layout Standard
-
 Listed below are three milestones for this project 
 \begin_inset ERT
 status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 %
 \backslash
 newline adding a new line puts too much space over here
 \end_layout
 
-\begin_layout Standard
-
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -357,12 +393,10 @@ newline adding a new line puts too much space over here
 \end_layout
 
 \begin_layout Description
-
-
 \begin_inset ERT
 status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 Milestone One:
 \end_layout
@@ -374,8 +408,13 @@ Milestone One:
 
 \begin_deeper
 \begin_layout Standard
-
-This involves defining rules and defining a notion of “sameness” for two code artefacts. The PDStore database will be used to compare the two different versions of the code. Completion criteria involves being able to generate output that clearly identify the changes. 
+This involves defining rules and defining a notion of “sameness” for two
+ code artefacts.
+ The PDStore database will be used to compare the two different versions
+ of the code.
+ Completion criteria involves being able to generate output that clearly
+ identify the changes.
+ 
 \begin_inset Newline newline
 \end_inset
 
@@ -388,12 +427,10 @@ Due Date:
 
 \end_deeper
 \begin_layout Description
-
-
 \begin_inset ERT
 status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 Milestone Two:
 \end_layout
@@ -405,8 +442,11 @@ Milestone Two:
 
 \begin_deeper
 \begin_layout Standard
-
-After being able to identify the changes, we need to define appropriate rules for merging. To complete the milestone, the merger will be required to successfully merge files for a few defined scenarios. 
+After being able to identify the changes, we need to define appropriate
+ rules for merging.
+ To complete the milestone, the merger will be required to successfully
+ merge files for a few defined scenarios.
+ 
 \begin_inset Newline newline
 \end_inset
 
@@ -419,12 +459,10 @@ Due Date:
 
 \end_deeper
 \begin_layout Description
-
-
 \begin_inset ERT
 status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 Milestone Three:
 \end_layout
@@ -433,7 +471,6 @@ Milestone Three:
 
  
 \begin_inset space ~
-
 \end_inset
 
 
@@ -441,8 +478,11 @@ Milestone Three:
 
 \begin_deeper
 \begin_layout Standard
-
-Integrate the added functionality to existing PDStore based versioning tool. Integrating the added functionality will allow us to conduct our evaluation on users. This will be key in determining the usefulness and effectiveness of the changes.
+Integrate the added functionality to existing PDStore based versioning tool.
+ Integrating the added functionality will allow us to conduct our evaluation
+ on users.
+ This will be key in determining the usefulness and effectiveness of the
+ changes.
 \begin_inset Newline newline
 \end_inset
 
@@ -455,7 +495,6 @@ Due Date:
 
 \end_deeper
 \begin_layout Standard
-
  
 \begin_inset CommandInset bibtex
 LatexCommand bibtex

@@ -14,6 +14,10 @@
 \author{Kartik Andalam, Raoul D'Cunha, Shreya Shah }
 \date{March 2014}
 
+
+
+
+
 \makeatother
 
 \begin{document}
@@ -27,17 +31,18 @@
 
 Software merging is a necessity for large-scale software development
 and while there are many code version systems to help with this, many
-of them take the structure of the code into account. Understanding
+of them don't take the structure of the code into account. Understanding
 the semantic and the syntactic structure of the code helps automate
 merging further, which in turn requires less effort from the developer
 at commit.
 
 We propose a tool that would attempt to automate merging and also
 assist the user in identifying the changes by analysing the semantics
-of the code. We intend to use PDStore to store the code in a structured
-manner that can be used in a versioning system. The proposal also
-highlights the requirements, milestones and possible evaluation methods
-for the research project.
+of the code. We intend to use PDStore%
+\footnote{PDStore is a Triplestore database developed at the University of Auckland%
+} to store the code in a structured manner that can be used in a versioning
+system. The proposal also highlights the requirements, milestones
+and possible evaluation methods for the research project.
 
 
 \section{Motivation}
@@ -69,9 +74,9 @@ at providing the user with a summarised report of semantic changes
 between two versions of a procedure, and focuses on minimising any
 spurious differences such as, renaming local variables. While the
 tool provides knowledge of variable dependences within a procedure,
-it is not very helpful when considering an entire program because the tool
-does not maintain any relationship between method invocation and method
-definition.
+it is not very helpful when considering an entire program because
+the tool does not maintain any relationship between method invocation
+and method definition.
 
 In \cite{XMLMerge} a technique for performing a 3 way structured
 XML merge is described. The technique involves defining merge rules
@@ -101,7 +106,7 @@ but not necessarily code structure
 two structures with slight variations 
 \item Identify changes in structure, such as method location being shifted 
 \item Successfully merge two differing versions of code following from the
-examples in 1 and 2
+examples in 1 and 2 
 \end{enumerate}
 The following optional requirements would also be attempted to met
 during the execution of this research endeavour 
@@ -119,9 +124,9 @@ defining a method to define “sameness” of a section of the code, we
 will be using a similar approach to \cite{XMLMerge} to generate rules
 that help define merging.
 
-The following describes an example of where our tool successfully merges
-two documents, identifying the changes with respect to semantic meaning
-and structure.
+The following describes an example of where our tool successfully
+merges two documents, identifying the changes with respect to semantic
+meaning and structure.
 
 Figure 1 shows one possible scenario we intend to solve with our tool.
 We aim to recognise if a method is carrying out the same procedure
@@ -130,15 +135,15 @@ the tool merges the two methods into one, by keeping the recent name
 of the method and same code within the method.
 
 \begin{figure}
-\includegraphics[scale=0.47]{IdentificationOfChanges}\caption{Identification of changes and merged result}
+\includegraphics[scale=0.44]{IdentificationOfChanges}\caption{Identification of changes and merged result}
 \end{figure}
 
 
 
 \section{Evaluation}
 
-Paper prototypes will be used to evaluate the feasibility of the 
-User Interface design of our tool. This study will reveal both fundamental
+Paper prototypes will be used to evaluate the feasibility of the User
+Interface design of our tool. This study will reveal both fundamental
 and minor flaws in the UI that would need to be fixed before the final
 milestone. Specific scenarios will be constructed outlining various
 use cases that will then be run through by the participants on multiple
@@ -163,10 +168,10 @@ changes
 
 
 This involves defining rules and defining a notion of “sameness” for
-two code artefacts. The PDStore database will be used to compare
-the two different versions of the code. Completion criteria involves
-being able to generate output that clearly identify the changes. \\
-\textbf{Due Date:} 15th April 2014
+two code artefacts. The PDStore database will be used to compare the
+two different versions of the code. Completion criteria involves being
+able to generate output that clearly identify the changes. \\
+ \textbf{Due Date:} 15th April 2014
 
 \item [{Milestone Two:}] Perform merging of simple structural changes
 
@@ -174,19 +179,19 @@ being able to generate output that clearly identify the changes. \\
 After being able to identify the changes, we need to define appropriate
 rules for merging. To complete the milestone, the merger will be required
 to successfully merge files for a few defined scenarios. \\
-\textbf{Due Date:} 30th April 2014
+ \textbf{Due Date:} 30th April 2014
 
-\item [{Milestone Three:}]~
+\item [{Milestone Three:}] ~
 
 
 Integrate the added functionality to existing PDStore based versioning
 tool. Integrating the added functionality will allow us to conduct
 our evaluation on users. This will be key in determining the usefulness
 and effectiveness of the changes.\\
-\textbf{Due Date:} 12th May 2014 
+ \textbf{Due Date:} 12th May 2014
 
 \end{description}
-\bibliographystyle{plain}
+ \bibliographystyle{plain}
 \bibliography{myBib}
 
 \end{document}
