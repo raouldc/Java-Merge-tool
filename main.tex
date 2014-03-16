@@ -1,3 +1,5 @@
+%% LyX 2.0.7 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
 \documentclass[11pt,twocolumn]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
@@ -44,7 +46,7 @@ Today's code version systems are based on textual comparisons. Being
 textual based means that they do not understand the structure of the
 code, and as a result the tools are unable to assist the developer
 with code merging. This gave motivation to utilise the extra information
-that can aid in the merging .
+that can aid in the merging.
 
 We aim to develop a language-aware code versioning system based on
 PDStore. In particular, we will utilize structured data to visualize
@@ -64,7 +66,7 @@ merged.
 \cite{SemanticDiff} describes a tool called “Semantic diff” and techniques
 used in that tool to show the effect of modifications. The tool aims
 at providing the user with a summarised report of semantic changes
-between two version of a procedure, and focuses on minimising any
+between two versions of a procedure, and focuses on minimising any
 spurious differences such as, renaming local variables. While the
 tool provides knowledge of variable dependences within a procedure,
 it is not as helpful when considering an entire program as the tool
@@ -78,11 +80,11 @@ problems, a few difference exist in the problem. Due to the nature
 of XML, the local structure is also to be considered. However with
 Java code the structure can vary and still present the same semantic
 definition. Thus some of the rules made in \cite{XMLMerge} become
-invalid for semistructured data such as code.
+invalid for semi structured data such as code.
 
 \cite{mergegraph} describes the problems associated with common textual
 based merging. It proposes a solution that can be applied to software
-artifacts of different types. The solution involves representing information
+artefacts of different types. The solution involves representing information
 with extra information such as namespaces appended with UIDs. Once
 the data is represented in this special structure, the job of analysing
 two structures should be made easier.
@@ -161,7 +163,7 @@ changes
 
 
 This involves defining rules and defining a notion of “sameness” for
-two artifacts of code. The PDStore database will be used to compare
+two artefacts of code. The PDStore database will be used to compare
 the two different versions of the code. Completion criteria involves
 being able to generate output that clearly identify the changes. \\
 \textbf{Due Date:} 15th April 2014
@@ -170,7 +172,7 @@ being able to generate output that clearly identify the changes. \\
 
 
 After being able to identify the changes, we need to define appropriate
-rules for merging.To complete the milestone, the merger will be required
+rules for merging. To complete the milestone, the merger will be required
 to successfully merge files for a few defined scenarios. \\
 \textbf{Due Date:} 30th April 2014
 

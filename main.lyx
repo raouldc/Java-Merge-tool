@@ -137,7 +137,7 @@ Today's code version systems are based on textual comparisons.
  the code, and as a result the tools are unable to assist the developer
  with code merging.
  This gave motivation to utilise the extra information that can aid in the
- merging .
+ merging.
 \end_layout
 
 \begin_layout Standard
@@ -182,8 +182,8 @@ key "SemanticDiff"
  describes a tool called “Semantic diff” and techniques used in that tool
  to show the effect of modifications.
  The tool aims at providing the user with a summarised report of semantic
- changes between two version of a procedure, and focuses on minimising any
- spurious differences such as, renaming local variables.
+ changes between two versions of a procedure, and focuses on minimising
+ any spurious differences such as, renaming local variables.
  While the tool provides knowledge of variable dependences within a procedure,
  it is not as helpful when considering an entire program as the tool does
  not maintain any relationship between method invocation and method definition.
@@ -211,7 +211,7 @@ key "XMLMerge"
 
 \end_inset
 
- become invalid for semistructured data such as code.
+ become invalid for semi structured data such as code.
 \end_layout
 
 \begin_layout Standard
@@ -222,7 +222,7 @@ key "mergegraph"
 \end_inset
 
  describes the problems associated with common textual based merging.
- It proposes a solution that can be applied to software artifacts of different
+ It proposes a solution that can be applied to software artefacts of different
  types.
  The solution involves representing information with extra information such
  as namespaces appended with UIDs.
@@ -398,7 +398,7 @@ Milestone One:
 \begin_deeper
 \begin_layout Standard
 This involves defining rules and defining a notion of “sameness” for two
- artifacts of code.
+ artefacts of code.
  The PDStore database will be used to compare the two different versions
  of the code.
  Completion criteria involves being able to generate output that clearly
@@ -432,8 +432,9 @@ Milestone Two:
 \begin_deeper
 \begin_layout Standard
 After being able to identify the changes, we need to define appropriate
- rules for merging.To complete the milestone, the merger will be required
- to successfully merge files for a few defined scenarios.
+ rules for merging.
+ To complete the milestone, the merger will be required to successfully
+ merge files for a few defined scenarios.
  
 \begin_inset Newline newline
 \end_inset
