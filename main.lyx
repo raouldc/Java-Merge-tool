@@ -235,28 +235,6 @@ Related Work
 \begin_layout Standard
 \begin_inset CommandInset citation
 LatexCommand cite
-key "CodeClones"
-
-\end_inset
-
- proposes a novel method for merging code clones and presents a successful
- case study conducted by using the Aries tool which uses to identify code
- clones and merge them.
- The method described in 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "CodeClones"
-
-\end_inset
-
- consists of a two phase process, where code clones that can be refactored
- are quickly detected, and the metrics are measured which indicate how the
- detected code clones should be merged.
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset citation
-LatexCommand cite
 key "SemanticDiff"
 
 \end_inset
@@ -285,9 +263,7 @@ key "XMLMerge"
  of XML editing.
  While there are similar problems, a few differences exist.
  By the nature of XML, the local structure is important.
- However with Java code the structure can vary and still present the same
- semantic definition.
- Thus some of the rules made in 
+ The rules made in 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "XMLMerge"
@@ -295,6 +271,26 @@ key "XMLMerge"
 \end_inset
 
  become invalid for flexible structured data such as code.
+ We will utilise PDStore and abstract the tool in such a way that it can
+ be used to assist in merging a variety of structured documents.
+\end_layout
+
+\begin_layout Standard
+The system described in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "finegraned"
+
+\end_inset
+
+ utilises fine-grained revision control functionality to keep track of program
+ modifications and support merging.
+ The merge tool of this system defines rules, using the user’s past revisions
+ to suggest a merged result to the user and also allows the user to make
+ changes to the temporary result.
+ While the tool automatically generates a merged result, the basis of these
+ rules are related to user configuration rather than the merge tool defining
+ the rules.
 \end_layout
 
 \begin_layout Standard
@@ -323,32 +319,30 @@ A successful execution of the research endeavour should meet the following
 \end_layout
 
 \begin_layout Enumerate
-To be able to successfully identify simple changes in method body but not
- necessarily code structure 
+Visually show the changes between two transactions with the use of tree
+ views.
+ 
 \end_layout
 
 \begin_layout Enumerate
-To be able to successfully identify and common sections of code in two structure
-s with slight variations 
+Allow the user to specify what should exist in the new state after merge.
+ Merge in this case is combining two states of a store to produce a third
+ state.
+ 
 \end_layout
 
 \begin_layout Enumerate
-Identify changes in structure, such as method location being shifted 
+Offers the ability to perfrom a three way merge.
+ 
 \end_layout
 
 \begin_layout Enumerate
-Successfully merge two differing versions of code following from the examples
- in 1 and 2 
-\end_layout
-
-\begin_layout Standard
-The following optional requirements would also be attempted to met during
- the execution of this research endeavour 
+Integrate into PDStore application.
+ 
 \end_layout
 
 \begin_layout Enumerate
-To integrate this additional functionality into the existing PDStore versioning
- application.
+Evaluate the usability of the tool comparing with existing merge tools.
  
 \end_layout
 
@@ -384,9 +378,8 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename Diagram v2.png
+	filename Diagramv2.png
 	scale 44
-	rotateOrigin rightTop
 
 \end_inset
 
@@ -394,7 +387,7 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Identification of changes and merged result
+Proposed GUI for merge tool
 \end_layout
 
 \end_inset

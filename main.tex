@@ -67,14 +67,6 @@ of such merge tools and how they compare to existing merge tools.
 
 \section{Related Work}
 
-\cite{CodeClones} proposes a novel method for merging code clones
-and presents a successful case study conducted by using the Aries
-tool which uses to identify code clones and merge them. The method
-described in \cite{CodeClones} consists of a two phase process, where
-code clones that can be refactored are quickly detected, and the metrics
-are measured which indicate how the detected code clones should be
-merged.
-
 \cite{SemanticDiff} describes a tool called “Semantic diff” and techniques
 used in that tool to show the effect of modifications. The tool aims
 at providing the user with a summarised report of semantic changes
@@ -89,10 +81,12 @@ In \cite{XMLMerge} a technique for performing a 3 way structured
 XML merge is described. The technique involves defining merge rules
 derived from common use cases of XML editing. While there are similar
 problems, a few differences exist. By the nature of XML, the local
-structure is important. However with Java code the structure can vary
-and still present the same semantic definition. Thus some of the rules
-made in \cite{XMLMerge} become invalid for flexible structured data
-such as code.
+structure is important. The rules made in \cite{XMLMerge} 
+become invalid for flexible structured data such as code.
+We will utilise PDStore and abstract the tool in such a way that it can be used to 
+assist in merging a variety of structured documents.
+
+The system described in \cite{finegraned} utilises fine-grained revision control functionality to keep track of program modifications and support merging.  The merge tool of this system defines rules, using the user’s past revisions to suggest a merged result to the user and also allows the user to make changes to the temporary result. While the tool automatically generates a merged result, the basis of these rules are related to user configuration rather than the merge tool defining the rules.
 
 \cite{mergegraph} describes the problems associated with common textual
 based merging. It proposes a solution that can be applied to software
@@ -107,19 +101,14 @@ two structures should be made easier.
 A successful execution of the research endeavour should meet the following
 requirements: 
 \begin{enumerate}
-\item To be able to successfully identify simple changes in method body
-but not necessarily code structure 
-\item To be able to successfully identify and common sections of code in
-two structures with slight variations 
-\item Identify changes in structure, such as method location being shifted 
-\item Successfully merge two differing versions of code following from the
-examples in 1 and 2 
-\end{enumerate}
-The following optional requirements would also be attempted to met
-during the execution of this research endeavour 
-\begin{enumerate}
-\item To integrate this additional functionality into the existing PDStore
-versioning application. 
+\item Visually show the changes between two transactions with the use of
+tree views.
+\item Allow the user to specify what should exist in the new state after
+merge. Merge in this case is combining two states of a store to produce
+a third state. 
+\item Offers the ability to perfrom a three way merge.
+\item Integrate into PDStore application.
+\item Evaluate the usability of the tool comparing with existing merge tools. 
 \end{enumerate}
 
 \section{Design and Implementation}
@@ -139,7 +128,7 @@ The user can select items from different versions to be included in
 the merged representation by clicking on the checkbox beside the items.
 
 \begin{figure}
-\centering{}\includegraphics[scale=0.44]{\string"Diagram v2\string".png}\caption{Identification of changes and merged result}
+\centering{}\includegraphics[scale=0.44]{\string"Diagram v2\string".png}\caption{Proposed GUI for merge tool}
 \end{figure}
 
 
@@ -203,7 +192,7 @@ of the changes.\\
  \textbf{Due Date:} 12th May 2014
 
 \end{description}
- \bibliographystyle{plain}
+\bibliographystyle{plain}
 \bibliography{myBib}
 
 \end{document}
