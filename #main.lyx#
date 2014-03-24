@@ -128,11 +128,11 @@ PDStore is a Triplestore database developed at the University of Auckland
 \end_inset
 
  database to maintain and analyse the structure of the data.
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
-The aim of the tool is to utilise information related to the structure of
- a file stored in PDStore and highlight the conflicts that arise in merging.
+ The aim of the tool is to utilise information related to the structure
+ of a file stored in PDStore and highlight the conflicts that arise in merging.
  The proposal highlights the requirements, milestones and possible evaluation
  methods for the research project.
 \end_layout
@@ -364,15 +364,15 @@ The underlying technology used in the proposed method involves using PDStore
 \end_layout
 
 \begin_layout Standard
-Figure 1 is an example that illustrates a possible GUI for three way merge
- involving PD Tree Views.
+Shown below is an example that illustrates a possible GUI for three way
+ merge involving PD Tree Views.
  The title string belonging to the LOTR book in the My book library database
  has differing values in each of the three existing versions(Base, Version
  A and Version B).
  We hope to colour code information such as modified items and or items
  in conflict to help better inform the user of the types of changes.
  The user can select items from different versions to be included in the
- merged representation by clicking on the checkbox beside the items.
+ merged representation by clicking on the checkbox beside the items
 \end_layout
 
 \begin_layout Standard
@@ -382,7 +382,6 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-\align center
 \begin_inset Graphics
 	filename Diagram v2.png
 	scale 44
