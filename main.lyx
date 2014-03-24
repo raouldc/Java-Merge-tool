@@ -222,8 +222,8 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-Developing a merge tool that maintains information in a structured form,
- gives scope to improve the way that conflicts and changes are showed.
+Developing a merge tool that maintains information in a structured form
+ gives scope to improve the way conflicts and changes are shown.
  This motivated us to explore the effectiveness and usability of such merge
  tools and how they compare to existing merge tools.
 \end_layout
@@ -243,7 +243,7 @@ key "SemanticDiff"
  to show the effect of modifications.
  The tool aims at providing the user with a summarised report of semantic
  changes between two versions of a procedure, and focuses on minimising
- any spurious differences such as, renaming local variables.
+ any spurious differences such as renaming local variables.
  While the tool provides knowledge of variable dependences within a procedure,
  it is not very helpful when considering an entire program because the tool
  does not maintain any relationship between method invocation and method
@@ -285,7 +285,7 @@ key "finegraned"
 
  utilises fine-grained revision control functionality to keep track of program
  modifications and support merging.
- The merge tool of this system defines rules, using the user’s past revisions
+ The merge tool of this system defines rules using the user’s past revisions
  to suggest a merged result to the user and also allows the user to make
  changes to the temporary result.
  While the tool automatically generates a merged result, the basis of these
@@ -320,30 +320,25 @@ A successful execution of the research endeavour should meet the following
 
 \begin_layout Enumerate
 Visually show the changes between two transactions with the use of tree
- views.
- 
+ views 
 \end_layout
 
 \begin_layout Enumerate
 Allow the user to specify what should exist in the new state after merge.
  Merge in this case is combining two states of a store to produce a third
- state.
- 
+ state 
 \end_layout
 
 \begin_layout Enumerate
-Offers the ability to perfrom a three way merge.
- 
+Offers the ability to perfrom a three way merge 
 \end_layout
 
 \begin_layout Enumerate
-Integrate into PDStore application.
- 
+Integrate into PDStore application 
 \end_layout
 
 \begin_layout Enumerate
-Evaluate the usability of the tool comparing with existing merge tools.
- 
+Evaluate the usability of the tool comparing with existing merge tools 
 \end_layout
 
 \begin_layout Section
@@ -352,18 +347,18 @@ Design and Implementation
 
 \begin_layout Standard
 The underlying technology used in the proposed method involves using PDStore
- to be able to form a structured view of the code.
+ to form a structured view of the code.
  The merging logic will be written in Scala, while the GUI will be designed
  in Swing.
 \end_layout
 
 \begin_layout Standard
-Figure 1 is an example that illustrates a possible GUI for three way merge
+Figure 1 is an example that illustrates a possible GUI for three way merging
  involving PD Tree Views.
  The title string belonging to the LOTR book in the My book library database
  has differing values in each of the three existing versions(Base, Version
  A and Version B).
- We hope to colour code information such as modified items and or items
+ We hope to colour code information such as modified items and/or items
  in conflict to help better inform the user of the types of changes.
  The user can select items from different versions to be included in the
  merged representation by clicking on the checkbox beside the items.
@@ -405,7 +400,7 @@ Evaluation
 \end_layout
 
 \begin_layout Standard
-This evaluation will consist of an usability testing and comparative analysis
+This evaluation will consist of usability testing and comparative analysis
  with existing merge tools.
 \end_layout
 
@@ -430,8 +425,8 @@ Any identified flaws will then be corrected and the test will then be undertaken
 
 \begin_layout Standard
 The comparative analysis will consist of test cases outlining major scenarios
- will be laid out at the start of the project and will later be run against
- existing merge tools and our developed merge tool.
+ that will be laid out at the start of the project and will later be run
+ against existing merge tools and our developed merge tool.
  The outcome of these test scenarios will help determine the effectiveness
  of the tools under different scenarios
 \end_layout
@@ -472,17 +467,13 @@ Milestone One:
 
 \end_inset
 
- Successfully identify the type of simple structural changes
+ Visually show the effect of a transaction
 \end_layout
 
 \begin_deeper
 \begin_layout Standard
-This involves defining rules and defining a notion of “sameness” for two
- code artefacts.
- The PDStore database will be used to compare the two different versions
- of the code.
- Completion criteria involves being able to generate output that clearly
- identify the changes.
+Visually show the changes before and after a transaction.
+ Changes should be displayed in terms of roles and relations.
  
 \begin_inset Newline newline
 \end_inset
@@ -506,15 +497,13 @@ Milestone Two:
 
 \end_inset
 
- Perform merging of simple structural changes
+ Able to perform Three-way merge
 \end_layout
 
 \begin_deeper
 \begin_layout Standard
-After being able to identify the changes, we need to define appropriate
- rules for merging.
- To complete the milestone, the merger will be required to successfully
- merge files for a few defined scenarios.
+This involves creating a UI such that the user can select the links/relations
+ that will exist the merged version.
  
 \begin_inset Newline newline
 \end_inset
@@ -538,12 +527,7 @@ Milestone Three:
 
 \end_inset
 
- Integrate the added functionality to existing PDStore based versioning
- tool
-\begin_inset space ~
-\end_inset
-
-
+ Integrate the functionality into PDHistoryViewer application
 \end_layout
 
 \begin_deeper

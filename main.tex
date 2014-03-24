@@ -26,6 +26,10 @@
 
 
 
+
+
+
+
 \makeatother
 
 \begin{document}
@@ -60,9 +64,9 @@ possible evaluation methods for the research project.
 
 
 Developing a merge tool that maintains information in a structured
-form, gives scope to improve the way that conflicts and changes are
-showed. This motivated us to explore the effectiveness and usability
-of such merge tools and how they compare to existing merge tools.
+form gives scope to improve the way conflicts and changes are shown.
+This motivated us to explore the effectiveness and usability of such
+merge tools and how they compare to existing merge tools.
 
 
 \section{Related Work}
@@ -71,22 +75,28 @@ of such merge tools and how they compare to existing merge tools.
 used in that tool to show the effect of modifications. The tool aims
 at providing the user with a summarised report of semantic changes
 between two versions of a procedure, and focuses on minimising any
-spurious differences such as, renaming local variables. While the
-tool provides knowledge of variable dependences within a procedure,
-it is not very helpful when considering an entire program because
-the tool does not maintain any relationship between method invocation
+spurious differences such as renaming local variables. While the tool
+provides knowledge of variable dependences within a procedure, it
+is not very helpful when considering an entire program because the
+tool does not maintain any relationship between method invocation
 and method definition.
 
 In \cite{XMLMerge} a technique for performing a 3 way structured
 XML merge is described. The technique involves defining merge rules
 derived from common use cases of XML editing. While there are similar
 problems, a few differences exist. By the nature of XML, the local
-structure is important. The rules made in \cite{XMLMerge} 
-become invalid for flexible structured data such as code.
-We will utilise PDStore and abstract the tool in such a way that it can be used to 
+structure is important. The rules made in \cite{XMLMerge} become
+invalid for flexible structured data such as code. We will utilise
+PDStore and abstract the tool in such a way that it can be used to
 assist in merging a variety of structured documents.
 
-The system described in \cite{finegraned} utilises fine-grained revision control functionality to keep track of program modifications and support merging.  The merge tool of this system defines rules, using the user’s past revisions to suggest a merged result to the user and also allows the user to make changes to the temporary result. While the tool automatically generates a merged result, the basis of these rules are related to user configuration rather than the merge tool defining the rules.
+The system described in \cite{finegraned} utilises fine-grained revision
+control functionality to keep track of program modifications and support
+merging. The merge tool of this system defines rules using the user’s
+past revisions to suggest a merged result to the user and also allows
+the user to make changes to the temporary result. While the tool automatically
+generates a merged result, the basis of these rules are related to
+user configuration rather than the merge tool defining the rules.
 
 \cite{mergegraph} describes the problems associated with common textual
 based merging. It proposes a solution that can be applied to software
@@ -102,40 +112,39 @@ A successful execution of the research endeavour should meet the following
 requirements: 
 \begin{enumerate}
 \item Visually show the changes between two transactions with the use of
-tree views.
+tree views 
 \item Allow the user to specify what should exist in the new state after
 merge. Merge in this case is combining two states of a store to produce
-a third state. 
-\item Offers the ability to perfrom a three way merge.
-\item Integrate into PDStore application.
-\item Evaluate the usability of the tool comparing with existing merge tools. 
+a third state 
+\item Offers the ability to perfrom a three way merge 
+\item Integrate into PDStore application 
+\item Evaluate the usability of the tool comparing with existing merge tools 
 \end{enumerate}
 
 \section{Design and Implementation}
 
 The underlying technology used in the proposed method involves using
-PDStore to be able to form a structured view of the code. The merging
-logic will be written in Scala, while the GUI will be designed in
-Swing.
+PDStore to form a structured view of the code. The merging logic will
+be written in Scala, while the GUI will be designed in Swing.
 
 Figure 1 is an example that illustrates a possible GUI for three way
-merge involving PD Tree Views. The title string belonging to the LOTR
-book in the My book library database has differing values in each
-of the three existing versions(Base, Version A and Version B). We
-hope to colour code information such as modified items and or items
+merging involving PD Tree Views. The title string belonging to the
+LOTR book in the My book library database has differing values in
+each of the three existing versions(Base, Version A and Version B).
+We hope to colour code information such as modified items and/or items
 in conflict to help better inform the user of the types of changes.
 The user can select items from different versions to be included in
 the merged representation by clicking on the checkbox beside the items.
 
 \begin{figure}
-\centering{}\includegraphics[scale=0.44]{\string"Diagram v2\string".png}\caption{Proposed GUI for merge tool}
+\centering{}\includegraphics[scale=0.44]{Diagramv2}\caption{Proposed GUI for merge tool}
 \end{figure}
 
 
 
 \section{Evaluation}
 
-This evaluation will consist of an usability testing and comparative
+This evaluation will consist of usability testing and comparative
 analysis with existing merge tools.
 
 As part of the usability testing, paper prototypes will be used to
@@ -153,10 +162,10 @@ Any identified flaws will then be corrected and the test will then
 be undertaken again so as to verify that the flaws are indeed fixed.
 
 The comparative analysis will consist of test cases outlining major
-scenarios will be laid out at the start of the project and will later
-be run against existing merge tools and our developed merge tool.
-The outcome of these test scenarios will help determine the effectiveness
-of the tools under different scenarios
+scenarios that will be laid out at the start of the project and will
+later be run against existing merge tools and our developed merge
+tool. The outcome of these test scenarios will help determine the
+effectiveness of the tools under different scenarios
 
 
 \section{Project Plan}
@@ -164,26 +173,22 @@ of the tools under different scenarios
 Listed below are the three milestones for this project %\newline adding a new line puts too much space over here
 
 \begin{description}
-\item [{Milestone One:}] Successfully identify the type of simple structural
-changes
+\item [{Milestone One:}] Visually show the effect of a transaction
 
 
-This involves defining rules and defining a notion of “sameness” for
-two code artefacts. The PDStore database will be used to compare the
-two different versions of the code. Completion criteria involves being
-able to generate output that clearly identify the changes. \\
+Visually show the changes before and after a transaction. Changes
+should be displayed in terms of roles and relations. \\
  \textbf{Due Date:} 15th April 2014
 
-\item [{Milestone Two:}] Perform merging of simple structural changes
+\item [{Milestone Two:}] Able to perform Three-way merge
 
 
-After being able to identify the changes, we need to define appropriate
-rules for merging. To complete the milestone, the merger will be required
-to successfully merge files for a few defined scenarios. \\
+This involves creating a UI such that the user can select the links/relations
+that will exist the merged version. \\
  \textbf{Due Date:} 30th April 2014
 
-\item [{Milestone Three:}] Integrate the added functionality to existing
-PDStore based versioning tool~
+\item [{Milestone Three:}] Integrate the functionality into PDHistoryViewer
+application
 
 
 Integrating the added functionality will allow us to conduct our evaluation
@@ -192,7 +197,7 @@ of the changes.\\
  \textbf{Due Date:} 12th May 2014
 
 \end{description}
-\bibliographystyle{plain}
+ \bibliographystyle{plain}
 \bibliography{myBib}
 
 \end{document}
